@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GameTopUp - Fast Game Top-ups</title>
+    <meta name="description" content="Top up your favorite games instantly and securely. Supports multiple games and payment methods." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/">
+          <img src="/assets/logo.svg" alt="GameTopUp" class="brand-logo" />
+          <span class="brand-name">GameTopUp</span>
+        </a>
+        <nav class="nav">
+          <a href="/products.html">Games</a>
+          <a href="#how">How it works</a>
+          <a href="#support">Support</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <h1>Top up games in seconds</h1>
+            <p>Instant delivery, secure payments, and great prices for all your favorite titles.</p>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#topup">Top Up Now</a>
+              <a class="btn btn-secondary" href="/products.html">Browse Games</a>
+            </div>
+            <ul class="trust-badges">
+              <li>Instant delivery</li>
+              <li>Secure checkout</li>
+              <li>24/7 support</li>
+            </ul>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <img src="/assets/hero-art.svg" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section id="topup" class="section">
+        <div class="container">
+          <h2>Top Up</h2>
+          <form id="topup-form" class="card form-grid" novalidate>
+            <div class="form-field">
+              <label for="game">Game</label>
+              <select id="game" name="game" required>
+                <option value="" disabled selected>Select a game</option>
+                <option value="mobile-legends">Mobile Legends</option>
+                <option value="free-fire">Free Fire</option>
+                <option value="valorant">Valorant</option>
+                <option value="genshin">Genshin Impact</option>
+              </select>
+              <small class="error" data-error-for="game"></small>
+            </div>
+
+            <div class="form-field">
+              <label for="userId">Player ID</label>
+              <input id="userId" name="userId" type="text" placeholder="e.g. 123456789" required />
+              <small class="help">Find this in your game profile settings.</small>
+              <small class="error" data-error-for="userId"></small>
+            </div>
+
+            <div class="form-field">
+              <label for="server">Server/Region</label>
+              <input id="server" name="server" type="text" placeholder="e.g. SEA, NA, EU" />
+              <small class="error" data-error-for="server"></small>
+            </div>
+
+            <div class="form-field">
+              <label for="denomination">Denomination</label>
+              <select id="denomination" name="denomination" required>
+                <option value="" disabled selected>Select amount</option>
+                <option value="50">50 Diamonds</option>
+                <option value="100">100 Diamonds</option>
+                <option value="250">250 Diamonds</option>
+                <option value="500">500 Diamonds</option>
+              </select>
+              <small class="error" data-error-for="denomination"></small>
+            </div>
+
+            <div class="form-field">
+              <label for="payment">Payment Method</label>
+              <select id="payment" name="payment" required>
+                <option value="" disabled selected>Select payment</option>
+                <option value="card">Credit/Debit Card</option>
+                <option value="ewallet">E-Wallet</option>
+                <option value="bank">Bank Transfer</option>
+              </select>
+              <small class="error" data-error-for="payment"></small>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Proceed to Checkout</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section id="how" class="section alt">
+        <div class="container">
+          <h2>How it works</h2>
+          <ol class="steps">
+            <li>
+              <span class="step-badge">1</span>
+              Choose your game and denomination
+            </li>
+            <li>
+              <span class="step-badge">2</span>
+              Enter your Player ID and region
+            </li>
+            <li>
+              <span class="step-badge">3</span>
+              Pay securely and get instant delivery
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="support" class="section">
+        <div class="container">
+          <h2>Support</h2>
+          <p>If you need help, contact us at <a href="mailto:support@gametopup.example">support@gametopup.example</a>.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> GameTopUp. All rights reserved.</p>
+        <nav class="footer-nav">
+          <a href="/">Home</a>
+          <a href="/products.html">Games</a>
+          <a href="#support">Support</a>
+        </nav>
+      </div>
+    </footer>
+
+    <dialog id="checkout-modal" class="modal">
+      <form method="dialog" class="modal-content">
+        <header class="modal-header">
+          <h3>Order Summary</h3>
+        </header>
+        <div class="modal-body">
+          <div id="order-summary"></div>
+          <p class="muted">This is a demo checkout. No real payment will be processed.</p>
+        </div>
+        <footer class="modal-footer">
+          <button class="btn btn-secondary" value="cancel">Cancel</button>
+          <button class="btn btn-primary" value="confirm">Confirm Order</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <script src="/script.js"></script>
+  </body>
+  </html>
+
