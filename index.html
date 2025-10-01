@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Top-Up Service</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Instant Game Top-Up</h1>
+  </header>
+
+  <main>
+    <section id="hero">
+      <h2>Fast, secure, and easy game credits</h2>
+      <p>Select your favorite game below and top up in seconds.</p>
+    </section>
+
+    <section id="games" class="grid"></section>
+
+    <section id="topup" class="hidden">
+      <h3 id="game-title"></h3>
+      <form id="topup-form">
+        <label>
+          Player ID
+          <input type="text" name="playerId" required placeholder="Enter your in-game ID">
+        </label>
+        <label>
+          Amount
+          <select name="amount" required></select>
+        </label>
+        <button type="submit">Pay Now</button>
+      </form>
+      <p id="confirmation" class="hidden"></p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Game Top-Up Service. All rights reserved.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
