@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Game Top-Up</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Game Top-Up</h1>
+  </header>
+  <main>
+    <section class="card">
+      <form id="topup-form">
+        <label>
+          Game
+          <select id="game" required></select>
+        </label>
+        <label>
+          User ID
+          <input id="userId" placeholder="Enter your game user ID" required />
+        </label>
+        <label>
+          Zone/Server ID (optional)
+          <input id="zoneId" placeholder="e.g., 1234" />
+        </label>
+        <label>
+          Product
+          <select id="product" required></select>
+        </label>
+        <label>
+          Payment Method
+          <select id="payment">
+            <option value="balance">Balance</option>
+            <option value="card">Credit/Debit Card</option>
+          </select>
+        </label>
+        <button type="submit">Create Order</button>
+      </form>
+    </section>
+
+    <section id="order-section" class="card hidden">
+      <h2>Order</h2>
+      <div id="order-details"></div>
+      <button id="check-status">Check Status</button>
+    </section>
+  </main>
+  <script src="/main.js"></script>
+  
+</body>
+</html>
