@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Fast and simple game top-up website for popular titles." />
+    <title>GameTopUp — Fast Game Top-ups</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#" aria-label="GameTopUp Home">
+          <span class="brand-mark" aria-hidden="true">⬆</span>
+          <span class="brand-name">GameTopUp</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#games">Games</a>
+          <a href="#topup">Top Up</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <h1>Top up your favorite games in seconds</h1>
+            <p>Safe, simple, and fast credits for MOBA, RPG, FPS and more.</p>
+            <div class="hero-ctas">
+              <a class="btn btn-primary" href="#topup">Top up now</a>
+              <a class="btn btn-ghost" href="#games">Browse games</a>
+            </div>
+            <div class="search-wrap">
+              <label for="gameSearch">Search games</label>
+              <input id="gameSearch" type="search" placeholder="Search by game name or genre..." autocomplete="off" />
+            </div>
+          </div>
+          <div class="hero-art" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section id="games" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Popular games</h2>
+            <p>Tap a game to start a quick top-up.</p>
+          </div>
+          <div id="gamesGrid" class="games-grid" role="list" aria-label="Game catalog">
+            <!-- Cards injected by JS -->
+          </div>
+        </div>
+      </section>
+
+      <section id="topup" class="section section-alt">
+        <div class="container">
+          <div class="section-head">
+            <h2>Top up</h2>
+            <p>Enter your player details and select a denomination.</p>
+          </div>
+
+          <form id="topupForm" class="form" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="gameSelect">Game</label>
+                <select id="gameSelect" required aria-required="true"></select>
+                <small class="hint">Choose the game to top up</small>
+              </div>
+              <div class="form-field">
+                <label for="serverSelect">Server/Region</label>
+                <select id="serverSelect" required aria-required="true"></select>
+                <small class="hint">Pick your server or region</small>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="playerUid">Player UID</label>
+                <input id="playerUid" name="playerUid" inputmode="numeric" pattern="[0-9]{3,}" placeholder="e.g., 123456789" required />
+                <small class="hint">Find UID in your game profile</small>
+              </div>
+              <div class="form-field">
+                <label for="denominationSelect">Denomination</label>
+                <select id="denominationSelect" required aria-required="true"></select>
+                <small class="hint">Select the amount to purchase</small>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="emailInput">Email (receipt)</label>
+                <input id="emailInput" type="email" placeholder="your@email.com" required />
+                <small class="hint">We send order details to this address</small>
+              </div>
+              <div class="form-field">
+                <label for="paymentMethod">Payment method</label>
+                <select id="paymentMethod" required aria-required="true">
+                  <option value="bank">Manual bank transfer</option>
+                  <option value="paypal">PayPal</option>
+                  <option value="card" disabled>Credit/Debit (coming soon)</option>
+                </select>
+                <small class="hint">Select your preferred method</small>
+              </div>
+            </div>
+
+            <div class="form-row align-center">
+              <div class="price-box" aria-live="polite">
+                <span class="price-label">Total:</span>
+                <span id="priceDisplay" class="price-value">—</span>
+              </div>
+              <button type="submit" class="btn btn-primary">Generate order</button>
+            </div>
+          </form>
+
+          <div id="orderSummary" class="summary" hidden>
+            <div class="summary-head">
+              <h3>Order summary</h3>
+              <button id="copySummary" class="btn btn-ghost" type="button">Copy details</button>
+            </div>
+            <dl class="summary-grid">
+              <div><dt>Order ID</dt><dd id="sumOrderId">—</dd></div>
+              <div><dt>Game</dt><dd id="sumGame">—</dd></div>
+              <div><dt>Server</dt><dd id="sumServer">—</dd></div>
+              <div><dt>Player UID</dt><dd id="sumUid">—</dd></div>
+              <div><dt>Denomination</dt><dd id="sumDenom">—</dd></div>
+              <div><dt>Total</dt><dd id="sumTotal">—</dd></div>
+              <div><dt>Email</dt><dd id="sumEmail">—</dd></div>
+              <div><dt>Payment</dt><dd id="sumPayment">—</dd></div>
+            </dl>
+            <div class="summary-actions">
+              <a class="btn btn-primary" href="#contact">Contact support</a>
+              <button id="newOrder" class="btn btn-ghost" type="button">New order</button>
+            </div>
+            <p class="disclaimer">This is a demo summary. No payment is processed on this static site.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>FAQ</h2>
+          </div>
+          <details>
+            <summary>How long does a top-up take?</summary>
+            <p>Most top-ups complete within 5-15 minutes after payment is confirmed.</p>
+          </details>
+          <details>
+            <summary>Where can I find my player UID?</summary>
+            <p>Open your game profile or settings; the UID is usually visible there.</p>
+          </details>
+          <details>
+            <summary>Is my data stored?</summary>
+            <p>We only use your UID and email to process orders and send receipts.</p>
+          </details>
+        </div>
+      </section>
+
+      <section id="contact" class="section section-alt">
+        <div class="container">
+          <div class="section-head">
+            <h2>Contact</h2>
+          </div>
+          <p>Email: <a href="mailto:support@example.com">support@example.com</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> GameTopUp. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+          <a href="#" aria-disabled="true">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./assets/js/app.js" defer></script>
+  </body>
+  </html>
+

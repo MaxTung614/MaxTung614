@@ -1,0 +1,49 @@
+[
+  {
+    "id": "genshin",
+    "name": "Genshin Impact",
+    "category": "RPG",
+    "servers": ["NA", "EU", "Asia", "TW/HK/MO"],
+    "denominations": [
+      { "id": "gsh-60", "label": "60 Genesis Crystals", "price": 0.99, "currency": "USD" },
+      { "id": "gsh-300", "label": "300 + 30", "price": 4.99, "currency": "USD" },
+      { "id": "gsh-980", "label": "980 + 110", "price": 14.99, "currency": "USD" },
+      { "id": "gsh-1980", "label": "1980 + 260", "price": 29.99, "currency": "USD" }
+    ]
+  },
+  {
+    "id": "mlbb",
+    "name": "Mobile Legends: Bang Bang",
+    "category": "MOBA",
+    "servers": ["Global", "SEA"],
+    "denominations": [
+      { "id": "mlbb-86", "label": "86 Diamonds", "price": 1.99, "currency": "USD" },
+      { "id": "mlbb-172", "label": "172 Diamonds", "price": 3.69, "currency": "USD" },
+      { "id": "mlbb-257", "label": "257 Diamonds", "price": 5.19, "currency": "USD" },
+      { "id": "mlbb-344", "label": "344 Diamonds", "price": 6.99, "currency": "USD" }
+    ]
+  },
+  {
+    "id": "valorant",
+    "name": "VALORANT",
+    "category": "FPS",
+    "servers": ["NA", "EU", "AP", "BR", "LATAM"],
+    "denominations": [
+      { "id": "val-475", "label": "475 VP", "price": 4.99, "currency": "USD" },
+      { "id": "val-1000", "label": "1000 VP", "price": 9.99, "currency": "USD" },
+      { "id": "val-2050", "label": "2050 VP", "price": 19.99, "currency": "USD" }
+    ]
+  },
+  {
+    "id": "pubgm",
+    "name": "PUBG MOBILE",
+    "category": "Shooter",
+    "servers": ["Global"],
+    "denominations": [
+      { "id": "pub-60", "label": "60 UC", "price": 0.99, "currency": "USD" },
+      { "id": "pub-325", "label": "325 UC", "price": 4.99, "currency": "USD" },
+      { "id": "pub-660", "label": "660 UC", "price": 9.99, "currency": "USD" }
+    ]
+  }
+]
+
