@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f5f6fa;
+  color: #2c3e50;
+}
+
+header {
+  background: #3498db;
+  color: #fff;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+#hero {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
+
+.game-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.game-card:hover {
+  transform: translateY(-4px);
+}
+
+#topup {
+  padding: 2rem;
+}
+
+#topup.hidden {
+  display: none;
+}
+
+label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+button {
+  background: #e67e22;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #d35400;
+}
+
+footer {
+  margin-top: auto;
+  background: #2c3e50;
+  color: #ecf0f1;
+  text-align: center;
+  padding: 1rem;
+}
